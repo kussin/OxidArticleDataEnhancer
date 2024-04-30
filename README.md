@@ -31,7 +31,7 @@ This module is an excellent choice for OXID eShop users looking to enhance their
 To install the module, please execute the following commands in OXID eShop root directory:
 
    ```bash
-   composer config repositories.kussin_chatgpt vcs https://github.com/kussin/OxidArticleDataEnhancer.git
+   composer config repositories.kussin_articledataenhancer vcs https://github.com/kussin/OxidArticleDataEnhancer.git
    composer require "kussin/article-data-enhancer":"dev-dev" --no-update
    composer clearcache
    composer update --no-interaction
