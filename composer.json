@@ -1,0 +1,50 @@
+{
+  "name": "kussin/article-data-enhancer",
+  "version": "0.0.1",
+  "description": "Kussin | Article Data Enhancer for OXID eShop",
+  "type": "oxideshop-module",
+  "keywords": [
+    "wmdk",
+    "kussin",
+    "oxid",
+    "modules"
+  ],
+  "homepage": "https://www.kussin.de/",
+  "license": [
+    "EULA"
+  ],
+  "authors": [
+    {
+      "name": "Daniel Kussin",
+      "email": "daniel.kussin@kussin.de",
+      "homepage": "https://www.kussin.de/",
+      "role": "Project Owner"
+    }
+  ],
+  "support": {
+    "email": "info@kussin.eu",
+    "issues": "https://github.com/kussin/OxidArticleDataEnhancer/issues"
+  },
+  "extra": {
+    "oxideshop": {
+      "target-directory": "kussin/article-data-enhancer",
+      "source-directory": "modules/kussin/article-data-enhancer",
+      "blacklist-filter": [
+        "build/**/*.*",
+        "grunt/**/*.*",
+        "node_modules/**/*.*"
+      ]
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "oxid-esales/oxideshop-ce": "^6.0",
+    "ext-json": "*",
+    "phpoffice/phpspreadsheet": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kussin\\ArticleDataEnhancer\\": "../../../source/modules/kussin/article-data-enhancer"
+    }
+  }
+}
