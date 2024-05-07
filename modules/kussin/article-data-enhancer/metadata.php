@@ -4,6 +4,7 @@
  */
 $sMetadataVersion = '2.0';
 
+use Kussin\ArticleDataEnhancer\Api\Data;
 use Kussin\ArticleDataEnhancer\Core\ModuleEvents;
 use Kussin\ArticleDataEnhancer\Cron\Importer;
 
@@ -31,6 +32,8 @@ $aModule = array(
     ),
 
     'controllers' => array(
+        'articledataenhancer_api' => Data::class,
+
         'articledataenhancer_importer' => Importer::class,
     ),
 
