@@ -5,6 +5,7 @@
 $sMetadataVersion = '2.0';
 
 use Kussin\ArticleDataEnhancer\Core\ModuleEvents;
+use Kussin\ArticleDataEnhancer\Cron\Importer;
 
 // FILE PATH
 $sModulePath = dirname(__FILE__);
@@ -30,11 +31,35 @@ $aModule = array(
     ),
 
     'controllers' => array(
+        'articledataenhancer_importer' => Importer::class,
     ),
 
     'templates' => array(
     ),
 
     'blocks' => array(
-    )
+    ),
+
+    'settings' => array(
+        array(
+            'group' => 'sKussinArticleDataEnhancerImportSettings',
+            'name' => 'aKussinArticleDataEnhancerImportMapping',
+            'type' => 'aarr',
+            'value' => array(
+                'example.csv' => 'OXARTNUM:Artikelnummer|OXEAN:EAN',
+            ),
+        ),
+        array(
+            'group' => 'sKussinArticleDataEnhancerDebugSettings',
+            'name' => 'blKussinArticleDataEnhancerDebugEnabled',
+            'type' => 'bool',
+            'value' => 0,
+        ),
+        array(
+            'group' => 'sKussinArticleDataEnhancerDebugSettings',
+            'name' => 'sKussinArticleDataEnhancerLogFilename',
+            'type' => 'str',
+            'value' => 'log/KUSSIN_ARTICLEDATAENHANCER.log',
+        ),
+    ),
 );
