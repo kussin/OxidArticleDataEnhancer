@@ -13,6 +13,9 @@ final class ModuleEvents
     {
         // REGISTER MODULE
         self::_register();
+
+        // INITIONALIZE
+        self::_createArticleDataEnhancerTable();
     }
 
     private static function _hasDbTable($sTable): bool
@@ -50,6 +53,14 @@ final class ModuleEvents
         $oResult = DatabaseProvider::getDb()->getAll($sQuery);
 
         return ($oResult == FALSE) ? FALSE : TRUE;
+    }
+
+    private static function _createArticleDataEnhancerTable(): void
+    {
+        if (!self::_hasDbTable('kussin_article_data_enhancer')) {
+            $sQuery = file_get_contents(__DIR__ . '/../sql/insert.sql');
+            DatabaseProvider::getDb()->execute($sQuery);
+        }
     }
 
     private static function _register($sLicenseFile = 'modules/kussin/article-data-enhancer/license.txt', $iTimeout = 500): void
