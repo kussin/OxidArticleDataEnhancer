@@ -18,8 +18,8 @@ class Data
         FROM 
             `kussin_article_data_enhancer`
         WHERE 
-            (ProductNumber = "' . $sArticleId . '")
-            OR (EAN = "' . $sArticleId . '")
+            (ProductNumber LIKE "' . $sArticleId . '")
+            OR (EAN LIKE "' . $sArticleId . '")
         LIMIT 
             ' . $iLimit . ';';
 
